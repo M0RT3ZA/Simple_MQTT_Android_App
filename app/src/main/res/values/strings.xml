@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ESP32DHT</string>
+    <string name="rootURL">tcp://192.168.1.10:1883</string>
+    <string name="nan">NaN</string>
+    <string name="humidity">Humidity:</string>
+    <string name="temperature">Temperature:</string>
+    <string name="temperature_icon">Temperature Icon</string>
+    <string name="humidity_icon">Humidity Icon</string>
+    <string name="degree">°C</string>
+</resources>

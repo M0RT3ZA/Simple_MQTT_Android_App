@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/WV"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/llMQTT"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/llMQTT"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/WV"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/ivThermometer"
+            android:src="@drawable/ic_thermometer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTemperatureText"
+            app:layout_constraintEnd_toStartOf="@+id/tvTemperatureText"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTemperatureText"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:contentDescription="@string/temperature_icon" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvTemperatureText"
+            android:text="@string/temperature"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="4dp"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/ivThermometer"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvTemperatureValue"
+            app:layout_constraintBottom_toTopOf="@+id/tvHumidityText"
+            app:layout_constraintVertical_chainStyle="packed"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvTemperatureValue"
+            android:text="@string/nan"
+            android:layout_marginStart="4dp"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/tvTemperatureText"
+            app:layout_constraintTop_toTopOf="@id/tvTemperatureText"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTemperatureText"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/ivHumidity"
+            android:src="@drawable/ic_humidity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvHumidityText"
+            app:layout_constraintEnd_toStartOf="@+id/tvHumidityText"
+            app:layout_constraintBottom_toBottomOf="@+id/tvHumidityText"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:contentDescription="@string/humidity_icon" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvHumidityText"
+            android:text="@string/humidity"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvHumidityValue"
+            app:layout_constraintStart_toEndOf="@+id/ivHumidity"
+            app:layout_constraintTop_toBottomOf="@+id/tvTemperatureText"
+            app:layout_constraintVertical_chainStyle="packed"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvHumidityValue"
+            android:text="@string/nan"
+            android:layout_marginStart="4dp"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvHumidityText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvHumidityText"
+            app:layout_constraintTop_toTopOf="@+id/tvHumidityText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
